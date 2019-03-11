@@ -8,12 +8,14 @@ const blogEvents = require('./blogs/events.js')
 // require('./example')
 
 $(() => {
+  // auth
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+  // blog
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
-  $('#delete-blog').on('submit', authEvents.onDeleteBlog)
-  $('#all-blogs').on('click', authEvents.onGetBlogs)
-  $('#update-blog').on('submit', authEvents.onUpdateBlog)
+  $('#delete-blog').on('submit', blogEvents.onDeleteBlog)
+  $('#all-blogs').on('click', blogEvents.onGetBlogs)
+  $('#update-blog').on('submit', blogEvents.onUpdateBlog)
 })
