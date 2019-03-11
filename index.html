@@ -13,5 +13,75 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+
+      <div class = 'sign-up-container'>
+
+        <h3>Sign Up</h3>
+        <form id='sign-up'>
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+          <button>Submit</button>
+        </form>
+
+        <h3>Sign In</h3>
+        <form id='sign-in'>
+        <input type="email" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <button>Sign In</button>
+        </form>
+
+      </div>
+
+      <div class = sign-out-container>
+
+      <h3>Change Password</h3>
+      <form id='change-password'>
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <input type="password" name="passwords[old]" placeholder="old password">
+        <button>Change Password</button>
+      </form>
+
+        <h3>Sign Out</h3>
+          <button id='sign-out'>Sign Out</button>
+    </div>
+
+    <div class = create-genre-container>
+
+        <h3>Create Blog</h3>
+        <form id='create-blog'>
+          <input type="text" name="blog[blog_name]" placeholder="Blog Name">
+          <input type="text" name="blog[content]" placeholder="Content">
+          <button>Create</button>
+        </form>
+
+        <h3>Find All Blogs</h3>
+        <button id='all-blogs'>All Songs</button>
+
+        <h3>Delete Blog</h3>
+        <form id='delete-blog'>
+          <input type="text" name="song[id]" placeholder="Enter Song Id">
+          <button>Delete</button>
+        </form>
+
+
+        <h3>Update Blog</h3>
+        <form id='update-blog'>
+          <input type="text" name="blog[blog_name]" placeholder="Update Title">
+          <input type="text" name="blog[content]" placeholder="Update Content">
+          <button>Update Song</button>
+        </form>
+
+      </div>
+
+      <div class= auth-message>
+        <p id='log-user-message'></p>
+      </div>
+
+      <div class= show-table>
+        <p id= 'blogs-table'></p>
+      </div>
+
+
     </body>
 </html>
