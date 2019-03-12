@@ -205,6 +205,18 @@ body {
       cursor: pointer;
     }
 
+    // SCROLLABLE DIV STYLES
+    .clsScroll {
+      padding: 1em 2em;
+      // position: sticky;
+      margin: 80px 0px 0px 8px;
+      height: 800px;
+      width:  650px;
+      // left: 100%;
+      background-color: yellow;
+      overflow: scroll;
+    }
+
     // SHOW BLOG STYLES
     .show-blog-btn {
         // display: none;
