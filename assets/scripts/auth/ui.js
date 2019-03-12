@@ -4,23 +4,23 @@ const store = require('../store')
 
 // authentication user interface
 const removeMessageClass = () => {
-  $('#log-user-message').removeClass('text-success text-danger')
+  $('#user-message').removeClass('text-success text-danger')
   $('#load-resource-message').removeClass('text-success text-danger')
   $('#song-table').removeClass('text-success text-danger')
 }
 const onSignUpSuccess = (responseData) => {
-  $('#log-user-message').addClass('text-success').text('Congradulations! Sign Up Success')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-success').text('Congradulations! Sign Up Success')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.signup-modal').hide()
 }
 const onSignUpFailure = () => {
-  $('#log-user-message').addClass('text-danger').text('Username or Password taken, try again.')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-danger').text('Username or Password taken, try again.')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onSignInSuccess = (responseData) => {
-  $('#log-user-message').addClass('text-success').text('Sign In Success! Share some toons!')
+  $('#user-message').addClass('text-success').text('Sign In Success! Share some toons!')
   store.user = responseData.user
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.signin-modal').hide()
   $('.signup-btn').hide()
   $('.signin-btn').hide()
@@ -28,29 +28,29 @@ const onSignInSuccess = (responseData) => {
   $('.signout-btn').fadeIn(1500)
 }
 const onSignInFailure = () => {
-  $('#log-user-message').addClass('text-danger').text('Unknown username or password')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-danger').text('Unknown username or password')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onSignOutSuccess = (responseData) => {
-  $('#log-user-message').addClass('text-success').text('Sign Out Success')
+  $('#user-message').addClass('text-success').text('Sign Out Success')
   store.user = null
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.chpw-btn').hide()
   $('.signout-btn').hide()
   $('.signup-btn').fadeIn(1500)
   $('.signin-btn').fadeIn(1500)
 }
 const onSignOutFailure = (responseData) => {
-  $('#log-user-message').addClass('text-danger').text('You failed to sign out')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-danger').text('You failed to sign out')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onChangePasswordSuccess = (responseData) => {
-  $('#log-user-message').addClass('text-success').text('Hoorah! Password Changed!')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-success').text('Hoorah! Password Changed!')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onChangePasswordFailure = (responseData) => {
-  $('#log-user-message').addClass('text-danger').text('Failed to Change Password')
-  $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#user-message').addClass('text-danger').text('Failed to Change Password')
+  $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 module.exports = {
   onSignUpSuccess,
