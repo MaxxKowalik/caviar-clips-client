@@ -32,7 +32,7 @@ const onGetBlogsSuccess = (responseData) => {
   } else {
     $('#log-user-message').addClass('text-success').text('All Blogs Located!')
     $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
-    $('#blogs-table').html(showBlogsHtml).fadeIn(3000)
+    $('#blog-table').html(showBlogsHtml).fadeIn(3000)
   }
 }
 const onUpdateBlogSuccess = (responseData) => {

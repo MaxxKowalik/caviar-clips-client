@@ -32,9 +32,9 @@ const onSignOutSuccess = (responseData) => {
   $('#log-user-message').addClass('text-success').text('Sign Out Success')
   store.user = null
   $('.sign-up-container').show()
-  $('.sign-out-container').hide()
-  $('.create-song-container').hide()
-  $('#song-table').hide()
+  // $('.sign-out-container').hide()
+  // $('.create-song-container').hide()
+  // $('#song-table').hide()
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.create-genre-container').hide()
 }
