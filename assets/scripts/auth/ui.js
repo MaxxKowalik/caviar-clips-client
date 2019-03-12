@@ -11,6 +11,7 @@ const removeMessageClass = () => {
 const onSignUpSuccess = (responseData) => {
   $('#log-user-message').addClass('text-success').text('Congradulations! Sign Up Success')
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('.signup-modal').hide()
 }
 const onSignUpFailure = () => {
   $('#log-user-message').addClass('text-danger').text('Username or Password taken, try again.')
@@ -20,9 +21,11 @@ const onSignInSuccess = (responseData) => {
   $('#log-user-message').addClass('text-success').text('Sign In Success! Share some toons!')
   store.user = responseData.user
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
-  $('.sign-up-container').hide()
-  $('.sign-out-container').fadeIn(1500)
-  $('.create-song-container').fadeIn(1500)
+  $('.signin-modal').hide()
+  $('.signup-btn').hide()
+  $('.signin-btn').hide()
+  $('.chpw-btn').fadeIn(1500)
+  $('.signout-btn').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#log-user-message').addClass('text-danger').text('Unknown username or password')
@@ -31,12 +34,11 @@ const onSignInFailure = () => {
 const onSignOutSuccess = (responseData) => {
   $('#log-user-message').addClass('text-success').text('Sign Out Success')
   store.user = null
-  $('.sign-up-container').show()
-  // $('.sign-out-container').hide()
-  // $('.create-song-container').hide()
-  // $('#song-table').hide()
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
-  $('.create-genre-container').hide()
+  $('.chpw-btn').hide()
+  $('.signout-btn').hide()
+  $('.signup-btn').fadeIn(1500)
+  $('.signin-btn').fadeIn(1500)
 }
 const onSignOutFailure = (responseData) => {
   $('#log-user-message').addClass('text-danger').text('You failed to sign out')
