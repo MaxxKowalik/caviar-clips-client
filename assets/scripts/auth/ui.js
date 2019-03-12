@@ -24,8 +24,10 @@ const onSignInSuccess = (responseData) => {
   $('.signin-modal').hide()
   $('.signup-btn').hide()
   $('.signin-btn').hide()
+  $('.show-blog-btn').fadeIn(1500)
   $('.chpw-btn').fadeIn(1500)
   $('.signout-btn').fadeIn(1500)
+  $('.create-blog-btn').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#user-message').addClass('text-danger').text('Unknown username or password')
@@ -37,6 +39,7 @@ const onSignOutSuccess = (responseData) => {
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.chpw-btn').hide()
   $('.signout-btn').hide()
+  $('.create-blog-btn').hide()
   $('.signup-btn').fadeIn(1500)
   $('.signin-btn').fadeIn(1500)
 }

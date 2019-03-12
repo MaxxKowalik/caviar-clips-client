@@ -28,6 +28,12 @@
 
       </nav>
 
+      <!--  THIS DIV HOLDS BLOG OPTION BUTTONS WHEN SIGNED IN-->
+      <div class="blog-options">
+        <button id="create-blog-modal-btn" class="create-blog-btn">Create Blog</button>
+        <button id="show-blog-modal-btn" class="show-blog-btn">Show Blog</button>
+      </div>
+
         <!--SIGN UP MODAL -->
         <div id="my-signup-modal" class="signup-modal">
           <div class="signup-modal-content">
@@ -65,6 +71,18 @@
           </div>
         </div>
 
+        <!-- Create BlOG MODAL -->
+        <div id="my-create-blog-modal" class="create-blog-modal">
+          <div class="create-blog-modal-content">
+            <span class="create-blog-close">&times;</span>
+            <form id='create-blog'>
+              <input type="text" name="blog[blog_name]" placeholder="Blog Name">
+              <input type="text" name="blog[content]" placeholder="Content">
+              <button>Create</button>
+            </form>
+          </div>
+        </div>
+
       <!-- <div class = create-genre-container>
 
         <h3>Create Blog</h3>
@@ -91,10 +109,10 @@
           <button>Update Song</button>
         </form>
 
-      </div> -->
+      </div>
       <div class= show-table>
         <p id='blog-table'></p>
-      </div>
+      </div> -->
 
 
     </body>

@@ -19,29 +19,6 @@ $(() => {
   $('#all-blogs').on('click', blogEvents.onGetBlogs)
   $('#update-blog').on('submit', blogEvents.onUpdateBlog)
 
-  // SET CHPW MODAL VARS
-  const chpwModal = document.querySelector('#my-chpw-modal')
-  const chpwModalBtn = document.querySelector('#chpw-modal-btn')
-  const chpwCloseBtn = document.querySelector('.chpw-close')
-  // HANDLE MODAL EVENTS
-  chpwModalBtn.addEventListener('click', openChpwModal)
-  chpwCloseBtn.addEventListener('click', closeChpwModal)
-  window.addEventListener('click', outsideChpwClick)
-  // OPEN CHPW
-  function openChpwModal () {
-    chpwModal.style.display = 'block'
-  }
-  // CLOSE CHPW
-  function closeChpwModal () {
-    chpwModal.style.display = 'none'
-  }
-  // CLOSE CHPW IF OUTSIDE CLICK
-  function outsideChpwClick (i) {
-    if (i.target === chpwModal) {
-      chpwModal.style.display = 'none'
-    }
-  }
-
   // SET SIGNUP MODAL VARS
   const signupModal = document.querySelector('#my-signup-modal')
   const signupModalBtn = document.querySelector('#signup-modal-btn')
@@ -73,18 +50,63 @@ $(() => {
   signinModalBtn.addEventListener('click', openSigninModal)
   signinCloseBtn.addEventListener('click', closeSigninModal)
   window.addEventListener('click', outsideSigninClick)
-  // OPEN SIGNUP
+  // OPEN SIGNIN
   function openSigninModal () {
     signinModal.style.display = 'block'
   }
-  // CLOSE SIGNUP
+  // CLOSE SIGNIN
   function closeSigninModal () {
     signinModal.style.display = 'none'
   }
-  // CLOSE SIGNUP IF OUTSIDE CLICK
+  // CLOSE SIGNIN IF OUTSIDE CLICK
   function outsideSigninClick (i) {
     if (i.target === signinModal) {
       signinModal.style.display = 'none'
+    }
+  }
+
+  // SET CHPW MODAL VARS
+  const chpwModal = document.querySelector('#my-chpw-modal')
+  const chpwModalBtn = document.querySelector('#chpw-modal-btn')
+  const chpwCloseBtn = document.querySelector('.chpw-close')
+  // HANDLE MODAL EVENTS
+  chpwModalBtn.addEventListener('click', openChpwModal)
+  chpwCloseBtn.addEventListener('click', closeChpwModal)
+  window.addEventListener('click', outsideChpwClick)
+  // OPEN CHPW
+  function openChpwModal () {
+    chpwModal.style.display = 'block'
+  }
+  // CLOSE CHPW
+  function closeChpwModal () {
+    chpwModal.style.display = 'none'
+  }
+  // CLOSE CHPW IF OUTSIDE CLICK
+  function outsideChpwClick (i) {
+    if (i.target === chpwModal) {
+      chpwModal.style.display = 'none'
+    }
+  }
+  // SET Create Blog MODAL VARS
+  const createBlogModal = document.querySelector('#my-create-blog-modal')
+  const createBlogModalBtn = document.querySelector('#create-blog-modal-btn')
+  const createBlogCloseBtn = document.querySelector('.create-blog-close')
+  // HANDLE MODAL EVENTS
+  createBlogModalBtn.addEventListener('click', openCreateBlogModal)
+  createBlogCloseBtn.addEventListener('click', closeCreateBlogModal)
+  window.addEventListener('click', outsideCreateBlogClick)
+  // OPEN CREATE BLOG
+  function openCreateBlogModal () {
+    createBlogModal.style.display = 'block'
+  }
+  // CLOSE CREATE BLOG
+  function closeCreateBlogModal () {
+    createBlogModal.style.display = 'none'
+  }
+  // CLOSE CREATE BLOG IF OUTSIDE CLICK
+  function outsideCreateBlogClick (i) {
+    if (i.target === createBlogModal) {
+      createBlogModal.style.display = 'none'
     }
   }
 })

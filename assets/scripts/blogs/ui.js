@@ -9,7 +9,7 @@ const removeMessageClass = () => {
 const onCreateBlogSuccess = (responseData) => {
   $('#user-message').addClass('text-success').text('You Created a Blog!')
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
-  // $('#blog-table').hide()
+  $('.create-blog-modal').hide()
 }
 const onCreateBlogFailure = (responseData) => {
   $('#user-message').addClass('text-danger').text('Create Blog Failure')
