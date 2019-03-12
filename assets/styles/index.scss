@@ -207,14 +207,14 @@ body {
 
     // SCROLLABLE DIV STYLES
     .clsScroll {
-      padding: 1em 2em;
       // position: sticky;
-      margin: 80px 0px 0px 8px;
-      height: 800px;
-      width:  650px;
+      // margin: 80px 0px 0px 8px;
+      height: 900px;
+      width:  700px;
       // left: 100%;
       background-color: yellow;
-      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     // SHOW BLOG STYLES
@@ -224,6 +224,10 @@ body {
         padding: 1em 2em;
         color: #fff;
         border: 0;
+    }
+
+    .show-blog-btn:hover {
+      background: #333;
     }
 
     // STYLES BLOG-OPTIONS DIV

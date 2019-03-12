@@ -28,56 +28,14 @@
 
       </nav>
 
-      <!-- SCROLLABLE DIV FOR BLOGS CONTENT -->
-      <div class="clsScroll">
-        <div class="card">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
-      of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-       a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
-       Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word
-        in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
-        1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-        written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
-         The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
-    </p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card mt-2">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-<div class="card">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
+      <div class="clsScroll px-2 pt-2 mt-5">
+          <div id='blog-table'></div>
       </div>
 
       <!--  THIS DIV HOLDS BLOG OPTION BUTTONS WHEN SIGNED IN-->
       <div class="blog-options">
         <button id="create-blog-modal-btn" class="create-blog-btn">Create Blog</button>
-        <button id="show-blog-modal-btn" class="show-blog-btn">Show Blog</button>
+        <button id="show-blog-modal-btn" class="show-blog-btn">Show My Blogs</button>
       </div>
 
         <!--SIGN UP MODAL -->
@@ -129,19 +87,8 @@
           </div>
         </div>
 
-      <!-- <div class = create-genre-container>
 
-        <h3>Create Blog</h3>
-        <form id='create-blog'>
-          <input type="text" name="blog[blog_name]" placeholder="Blog Name">
-          <input type="text" name="blog[content]" placeholder="Content">
-          <button>Create</button>
-        </form>
-
-        <h3>Find All Blogs</h3>
-        <button id='all-blogs'>All Songs</button>
-
-        <h3>Delete Blog</h3>
+        <!-- <h3>Delete Blog</h3>
         <form id='delete-blog'>
           <input type="text" name="song[id]" placeholder="Enter Song Id">
           <button>Delete</button>

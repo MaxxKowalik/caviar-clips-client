@@ -1,13 +1,28 @@
 {{#each blogs as |blog|}}
 
 
-  <section data-id="{{blog.id}}">
-    <h3>
+  <div class="card mt-4 mx-2" data-id="{{blog.id}}">
+    <div class="card-header">
       {{blog.blog_name}}
-      {{blog.content}}
-    <!-- <button id='blog-table'>Create Blog</button> -->
-    <!-- <button class='all-blogs' data-blog="{{blog.id}}">Show Blogs</button> -->
-  </h3>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{blog.content}}</p>
+        <footer class="blockquote-footer">{{user.id}}</footer>
+      </blockquote>
+    </div>
+  </div>
 
-  </section>
+
 {{/each}}
+
+
+<!-- <section data-id="{{blog.id}}">
+  <h3>
+    {{blog.blog_name}}
+    {{blog.content}}
+  <button id='blog-table'>Create Blog</button>
+  <button class='all-blogs' data-blog="{{blog.id}}">Show Blogs</button>
+</h3>
+
+</section> -->

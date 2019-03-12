@@ -16,7 +16,7 @@ $(() => {
   // blog
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
   $('#delete-blog').on('submit', blogEvents.onDeleteBlog)
-  $('#all-blogs').on('click', blogEvents.onGetBlogs)
+  $('.show-blog-btn').on('click', blogEvents.onGetBlogs)
   $('#update-blog').on('submit', blogEvents.onUpdateBlog)
 
   // SET SIGNUP MODAL VARS
