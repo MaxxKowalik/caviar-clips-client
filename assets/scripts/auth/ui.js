@@ -5,7 +5,7 @@ const store = require('../store')
 // authentication user interface
 const removeMessageClass = () => {
   $('#user-message').removeClass('text-success text-danger')
-  $('#load-resource-message').removeClass('text-success text-danger')
+  $('#user-message').removeClass('text-success text-danger')
   $('#song-table').removeClass('text-success text-danger')
 }
 const onSignUpSuccess = (responseData) => {
