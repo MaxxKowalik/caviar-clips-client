@@ -15,6 +15,15 @@ const createBlog = (formData) => {
 const getBlogs = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/blogs/',
+    method: 'GET'
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+  })
+}
+const getUserBlogs = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/blogs/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -46,5 +55,6 @@ module.exports = {
   createBlog,
   getBlogs,
   deleteBlog,
-  updateBlog
+  updateBlog,
+  getUserBlogs
 }

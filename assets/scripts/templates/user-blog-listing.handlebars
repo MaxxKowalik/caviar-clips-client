@@ -1,0 +1,21 @@
+{{#each blogs as |blog|}}
+
+
+  <div class="card mt-4 mx-2" data-id="{{blog.id}}">
+    <div class="card-header">
+      {{blog.blog_name}}
+      <button
+      class="delete-blog"
+      data-genre="{{blog.id}}"
+      data-song="{{user.id}}">Delete</button>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{blog.content}}</p>
+        <footer class="blockquote-footer">{{user.id}}</footer>
+      </blockquote>
+    </div>
+  </div>
+
+
+{{/each}}

@@ -14,12 +14,17 @@ const onCreateBlog = event => {
   $('form').trigger('reset')
 }
 const onGetBlogs = event => {
+  api.getBlogs()
+    .then(ui.onGetBlogsSuccess)
+    .catch(ui.onGetBlogsFailure)
+}
+const onGetUserBlogs = event => {
   event.preventDefault()
   const getBlogsForm = event.target
   const formData = getFormFields(getBlogsForm)
   api.getBlogs(formData)
-    .then(ui.onGetBlogsSuccess)
-    .catch(ui.onGetBlogsFailure)
+    .then(ui.onGetUserBlogsSuccess)
+    .catch(ui.onGetUserBlogsFailure)
 
   $('form').trigger('reset')
 }
@@ -48,5 +53,6 @@ module.exports = {
   onCreateBlog,
   onGetBlogs,
   onDeleteBlog,
-  onUpdateBlog
+  onUpdateBlog,
+  onGetUserBlogs
 }

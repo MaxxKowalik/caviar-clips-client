@@ -1,6 +1,12 @@
 'use strict'
 const authEvents = require('./auth/events.js')
 const blogEvents = require('./blogs/events.js')
+// const getFormFields = require('../../lib/get-form-fields')
+// const ui = require('./blogs/ui.js')
+// const api = require('./blogs/api.js')
+
+// const showBlogsTemplate = require('./templates/blog-listing.handlebars')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -8,6 +14,26 @@ const blogEvents = require('./blogs/events.js')
 // require('./example')
 
 $(() => {
+  // THIS FUNCTION WILL FIND ALL BLOGS ON LOAD
+  // const onGetBlogs = event => {
+  //   event.preventDefault()
+  //   const getBlogsForm = event.target
+  //   const formData = getFormFields(getBlogsForm)
+  //   api.getBlogs(formData)
+  //     .then(ui.onGetBlogsSuccess)
+  //     .catch(ui.onGetBlogsFailure)
+  //
+  //   $('form').trigger('reset')
+  // }
+  // onGetBlogs(event)
+  // const showBlogsHtml = showBlogsTemplate()
+  // const loadBlog = (event) => blogEvents.onGetBlogs(event)
+  blogEvents.onGetBlogs()
+  // $('.content-card').ready(blogEvents.onGetBlogs)
+  // $('body').ready('.card', blogEvents.onGetBlogs)
+  // $('#blog-table').html(showBlogsHtml).ready(blogEvents.onGetBlogs)
+  // $('.content-card').on('load', blogEvents.onGetBlogs)
+
   // auth
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -16,7 +42,7 @@ $(() => {
   // blog
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
   $('#delete-blog').on('submit', blogEvents.onDeleteBlog)
-  $('.show-blog-btn').on('click', blogEvents.onGetBlogs)
+  $('.show-blog-btn').on('click', blogEvents.onGetUserBlogs)
   $('#update-blog').on('submit', blogEvents.onUpdateBlog)
 
   // SET SIGNUP MODAL VARS
@@ -109,4 +135,11 @@ $(() => {
       createBlogModal.style.display = 'none'
     }
   }
+  // THIS FUNCTION WILL SHOW JUST THE USERS BLOGS
+  $('body').on('click', '.show-blog-btn', () => {
+    $('.show-blog-btn').on('click', (event) => {
+      const userId = $(event.target).data('user')
+      authEvents.onGetBlogs(userId)
+    })
+  })
 })
