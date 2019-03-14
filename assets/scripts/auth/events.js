@@ -1,6 +1,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const blogEvents = require('../blogs/events.js')
 
 // authentication events
 const onSignUp = event => {
@@ -29,6 +30,7 @@ const onSignOut = event => {
 
   api.signOut()
     .then(ui.onSignOutSuccess)
+    .then(blogEvents.onGetBlogs)
     .catch(ui.onSignOutFailure)
 
   $('form').trigger('reset')

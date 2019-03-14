@@ -44,7 +44,7 @@ const onGetUserBlogsSuccess = (responseData) => {
     $('#user-message').addClass('text-danger').text('No Blogs')
     $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   } else {
-    $('#user-message').addClass('text-success').text('All Blogs Located!')
+    // $('#user-message').addClass('text-success').text('We Found Your Blogs!')
     $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
     $('#blog-table').html(showUserBlogsHtml).fadeIn(3000)
   }

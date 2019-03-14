@@ -26,6 +26,7 @@ $(() => {
   $('body').on('click', '.delete-blog', blogEvents.onDeleteBlog)
   $('.show-blog-btn').on('click', blogEvents.onGetUserBlogs)
   $('body').on('submit', '.update-blog', blogEvents.onUpdateBlog)
+  $('.home-btn').on('click', blogEvents.onGetBlogs)
 
   // SET SIGNUP MODAL VARS
   const signupModal = document.querySelector('#my-signup-modal')

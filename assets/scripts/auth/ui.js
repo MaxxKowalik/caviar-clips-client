@@ -18,7 +18,7 @@ const onSignUpFailure = () => {
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onSignInSuccess = (responseData) => {
-  $('#user-message').addClass('text-success').text('Sign In Success! Share some toons!')
+  $('#user-message').addClass('text-success').text('Sign In Success! Create a Blog!')
   store.user = responseData.user
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.signin-modal').hide()
@@ -28,7 +28,7 @@ const onSignInSuccess = (responseData) => {
   $('.chpw-btn').fadeIn(1500)
   $('.signout-btn').fadeIn(1500)
   $('.create-blog-btn').fadeIn(1500)
-  $('.update-blog-btn').fadeIn(1500)
+  $('.home-btn').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#user-message').addClass('text-danger').text('Unknown username or password')
@@ -41,6 +41,8 @@ const onSignOutSuccess = (responseData) => {
   $('.chpw-btn').hide()
   $('.signout-btn').hide()
   $('.create-blog-btn').hide()
+  $('.show-blog-btn').hide()
+  $('.home-btn').hide()
   $('.signup-btn').fadeIn(1500)
   $('.signin-btn').fadeIn(1500)
 }
