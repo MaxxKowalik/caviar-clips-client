@@ -25,7 +25,7 @@ $(() => {
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
   $('body').on('click', '.delete-blog', blogEvents.onDeleteBlog)
   $('.show-blog-btn').on('click', blogEvents.onGetUserBlogs)
-  $('#update-blog').on('submit', blogEvents.onUpdateBlog)
+  $('body').on('submit', '.update-blog', blogEvents.onUpdateBlog)
 
   // SET SIGNUP MODAL VARS
   const signupModal = document.querySelector('#my-signup-modal')
@@ -132,14 +132,17 @@ $(() => {
   $(window).on('click', outsideUpdateBlogClick)
   // OPEN CREATE BLOG
   // .css( "user-select", "none" )
-  function openUpdateBlogModal () {
+  function openUpdateBlogModal (event) {
+    $(event.target).parents('.blog').find('.update-blog-modal').css('display', 'block')
+    console.log(event.target)
     console.log('This is', openUpdateBlogModal)
-    $('.update-blog-modal').css('display', 'block')
+    // $('.update-blog-modal').css('display', 'block')
   }
   // CLOSE CREATE BLOG
   function closeUpdateBlogModal () {
     console.log('Close button is', closeUpdateBlogModal)
-    updateBlogModal.style.display = 'none'
+    // updateBlogModal.style.display = 'none'
+    $('.update-blog-modal').css('display', 'none')
   }
   // CLOSE CREATE BLOG IF OUTSIDE CLICK
   function outsideUpdateBlogClick (i) {
