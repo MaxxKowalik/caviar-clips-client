@@ -25,7 +25,7 @@ const onDeleteBlogFailure = (responseData) => {
   $('#user-message').addClass('text-danger').text('Blog was not deleted')
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
-// this function will get all the blogs
+// THIS FUNCTION WILL GET ALL THE BLOGS
 const onGetBlogsSuccess = (responseData) => {
   const showBlogsHtml = showBlogsTemplate({ blogs: responseData.blogs })
   if (responseData.blogs.length === 0) {

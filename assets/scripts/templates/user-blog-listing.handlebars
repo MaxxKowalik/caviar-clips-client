@@ -4,10 +4,16 @@
   <div class="card mt-4 mx-2" data-id="{{blog.id}}">
     <div class="card-header">
       {{blog.blog_name}}
+
       <button
       class="delete-blog"
-      data-genre="{{blog.id}}"
-      data-song="{{user.id}}">Delete</button>
+      data-blog="{{blog.id}}"
+      data-user="{{user.id}}">Delete
+    </button>
+
+  <button class="update-blog-btn">Update</button>
+
+
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
@@ -16,6 +22,20 @@
       </blockquote>
     </div>
   </div>
+
+  <!-- TEST -->
+  <div id="my-update-blog-modal" class="update-blog-modal">
+    <div class="update-blog-modal-content">
+      <span class="update-blog-close">&times;</span> -->
+  <!--  CURRENTLY WORKING HERE-->
+    <form id="update-blog" data-blog="{{blog.id}}">
+      <input type="text" name="blog[blog_name]" placeholder="Update Blog Name">
+      <input type="text" name="blog[content]" placeholder="Update Blog Content">
+      <button>Update</button>
+    </form>
+  </div>
+</div>
+<!-- TEST END -->
 
 
 {{/each}}

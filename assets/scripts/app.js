@@ -1,11 +1,10 @@
 'use strict'
 const authEvents = require('./auth/events.js')
 const blogEvents = require('./blogs/events.js')
-// const getFormFields = require('../../lib/get-form-fields')
+// const showUserBlogsTemplate = require('./templates/user-blog-listing.handlebars')
+
 // const ui = require('./blogs/ui.js')
 // const api = require('./blogs/api.js')
-
-// const showBlogsTemplate = require('./templates/blog-listing.handlebars')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -15,24 +14,7 @@ const blogEvents = require('./blogs/events.js')
 
 $(() => {
   // THIS FUNCTION WILL FIND ALL BLOGS ON LOAD
-  // const onGetBlogs = event => {
-  //   event.preventDefault()
-  //   const getBlogsForm = event.target
-  //   const formData = getFormFields(getBlogsForm)
-  //   api.getBlogs(formData)
-  //     .then(ui.onGetBlogsSuccess)
-  //     .catch(ui.onGetBlogsFailure)
-  //
-  //   $('form').trigger('reset')
-  // }
-  // onGetBlogs(event)
-  // const showBlogsHtml = showBlogsTemplate()
-  // const loadBlog = (event) => blogEvents.onGetBlogs(event)
   blogEvents.onGetBlogs()
-  // $('.content-card').ready(blogEvents.onGetBlogs)
-  // $('body').ready('.card', blogEvents.onGetBlogs)
-  // $('#blog-table').html(showBlogsHtml).ready(blogEvents.onGetBlogs)
-  // $('.content-card').on('load', blogEvents.onGetBlogs)
 
   // auth
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -41,7 +23,7 @@ $(() => {
   $('.signout-btn').on('click', authEvents.onSignOut)
   // blog
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
-  $('#delete-blog').on('submit', blogEvents.onDeleteBlog)
+  $('body').on('click', '.delete-blog', blogEvents.onDeleteBlog)
   $('.show-blog-btn').on('click', blogEvents.onGetUserBlogs)
   $('#update-blog').on('submit', blogEvents.onUpdateBlog)
 
@@ -135,11 +117,26 @@ $(() => {
       createBlogModal.style.display = 'none'
     }
   }
-  // THIS FUNCTION WILL SHOW JUST THE USERS BLOGS
-  $('body').on('click', '.show-blog-btn', () => {
-    $('.show-blog-btn').on('click', (event) => {
-      const userId = $(event.target).data('user')
-      authEvents.onGetBlogs(userId)
-    })
-  })
+  // // SET UPDATE MODAL VARS
+  const updateBlogModal = document.querySelector('#my-update-blog-modal')
+  const updateBlogModalBtn = document.querySelector('.update-blog-btn')
+  const updateBlogCloseBtn = document.querySelector('.update-blog-close')
+  // HANDLE MODAL EVENTS
+  updateBlogModalBtn.addEventListener('click', openUpdateBlogModal)
+  updateBlogCloseBtn.addEventListener('click', closeUpdateBlogModal)
+  window.addEventListener('click', outsideUpdateBlogClick)
+  // OPEN CREATE BLOG
+  function openUpdateBlogModal () {
+    updateBlogModal.style.display = 'block'
+  }
+  // CLOSE CREATE BLOG
+  function closeUpdateBlogModal () {
+    updateBlogModal.style.display = 'none'
+  }
+  // CLOSE CREATE BLOG IF OUTSIDE CLICK
+  function outsideUpdateBlogClick (i) {
+    if (i.target === updateBlogModal) {
+      updateBlogModal.style.display = 'none'
+    }
+  }
 })

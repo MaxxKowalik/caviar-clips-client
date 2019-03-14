@@ -28,6 +28,7 @@ const onSignInSuccess = (responseData) => {
   $('.chpw-btn').fadeIn(1500)
   $('.signout-btn').fadeIn(1500)
   $('.create-blog-btn').fadeIn(1500)
+  $('.update-blog-btn').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#user-message').addClass('text-danger').text('Unknown username or password')
