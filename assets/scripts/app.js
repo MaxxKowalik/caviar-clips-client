@@ -118,19 +118,27 @@ $(() => {
     }
   }
   // // SET UPDATE MODAL VARS
-  const updateBlogModal = document.querySelector('#my-update-blog-modal')
-  const updateBlogModalBtn = document.querySelector('.update-blog-btn')
-  const updateBlogCloseBtn = document.querySelector('.update-blog-close')
+  const updateBlogModal = $('.update-blog-modal')
+  // const updateBlogModalBtn = $('.update-blog-btn')
+  const updateBlogCloseJquery = $('.update-blog-close')
+  // const updateBlogCloseBtn = document.querySelector('.update-blog-close')
+  console.log('Blog Close Jquery', updateBlogCloseJquery)
+  // console.log('Blog Close is', updateBlogCloseBtn)
   // HANDLE MODAL EVENTS
-  updateBlogModalBtn.addEventListener('click', openUpdateBlogModal)
-  updateBlogCloseBtn.addEventListener('click', closeUpdateBlogModal)
-  window.addEventListener('click', outsideUpdateBlogClick)
+  // updateBlogCloseBtn.addEventListener('click', closeUpdateBlogModal)
+  // $('body').on('click', '.delete-blog', blogEvents.onDeleteBlog)
+  $('body').on('click', '.update-blog-btn', openUpdateBlogModal)
+  $('body').on('click', '.update-blog-close', closeUpdateBlogModal)
+  $(window).on('click', outsideUpdateBlogClick)
   // OPEN CREATE BLOG
+  // .css( "user-select", "none" )
   function openUpdateBlogModal () {
-    updateBlogModal.style.display = 'block'
+    console.log('This is', openUpdateBlogModal)
+    $('.update-blog-modal').css('display', 'block')
   }
   // CLOSE CREATE BLOG
   function closeUpdateBlogModal () {
+    console.log('Close button is', closeUpdateBlogModal)
     updateBlogModal.style.display = 'none'
   }
   // CLOSE CREATE BLOG IF OUTSIDE CLICK
