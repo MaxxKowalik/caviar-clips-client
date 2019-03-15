@@ -1,10 +1,6 @@
 'use strict'
 const authEvents = require('./auth/events.js')
 const blogEvents = require('./blogs/events.js')
-// const showUserBlogsTemplate = require('./templates/user-blog-listing.handlebars')
-
-// const ui = require('./blogs/ui.js')
-// const api = require('./blogs/api.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -19,7 +15,7 @@ $(() => {
   // auth
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('.chpw-modal').on('submit', authEvents.onChangePassword)
   $('.signout-btn').on('click', authEvents.onSignOut)
   // blog
   $('#create-blog').on('submit', blogEvents.onCreateBlog)
@@ -29,101 +25,87 @@ $(() => {
   $('.home-btn').on('click', blogEvents.onGetBlogs)
 
   // SET SIGNUP MODAL VARS
-  const signupModal = document.querySelector('#my-signup-modal')
-  const signupModalBtn = document.querySelector('#signup-modal-btn')
-  const signupCloseBtn = document.querySelector('.signup-close')
+  const signupModal = $('#my-signup-modal')
+  const signupModalBtn = $('#signup-modal-btn')
+  const signupCloseBtn = $('.signup-close')
+  $('.inner-modal').on('click', innerModalClick)
+
+  function innerModalClick (event) {
+    event.stopPropagation()
+  }
   // HANDLE MODAL EVENTS
-  signupModalBtn.addEventListener('click', openSignupModal)
-  signupCloseBtn.addEventListener('click', closeSignupModal)
-  window.addEventListener('click', outsideSignupClick)
+  signupModalBtn.on('click', openSignupModal)
+  signupCloseBtn.on('click', closeSignupModal)
   // OPEN SIGNUP
   function openSignupModal () {
-    signupModal.style.display = 'block'
+    $('.modal').hide()
+    signupModal.show()
   }
   // CLOSE SIGNUP
   function closeSignupModal () {
-    signupModal.style.display = 'none'
-  }
-  // CLOSE SIGNUP IF OUTSIDE CLICK
-  function outsideSignupClick (i) {
-    if (i.target === signupModal) {
-      signupModal.style.display = 'none'
-    }
+    signupModal.hide()
   }
 
   // SET SIGNIN MODAL VARS
-  const signinModal = document.querySelector('#my-signin-modal')
-  const signinModalBtn = document.querySelector('#signin-modal-btn')
-  const signinCloseBtn = document.querySelector('.signin-close')
+  const signinModal = $('#my-signin-modal')
+  const signinModalBtn = $('#signin-modal-btn')
+  const signinCloseBtn = $('.signin-close')
   // HANDLE MODAL EVENTS
-  signinModalBtn.addEventListener('click', openSigninModal)
-  signinCloseBtn.addEventListener('click', closeSigninModal)
-  window.addEventListener('click', outsideSigninClick)
+  signinModalBtn.on('click', openSigninModal)
+  signinCloseBtn.on('click', closeSigninModal)
+  $('.modal').on('click', outsideModalClick)
   // OPEN SIGNIN
   function openSigninModal () {
-    signinModal.style.display = 'block'
+    $('.modal').hide()
+    signinModal.show()
   }
   // CLOSE SIGNIN
   function closeSigninModal () {
-    signinModal.style.display = 'none'
+    signinModal.hide()
   }
-  // CLOSE SIGNIN IF OUTSIDE CLICK
-  function outsideSigninClick (i) {
-    if (i.target === signinModal) {
-      signinModal.style.display = 'none'
-    }
+  // CLOSE FORMS IF OUTSIDE CLICK
+  function outsideModalClick () {
+    $('.modal form').trigger('reset')
+    $('.modal').hide()
   }
 
   // SET CHPW MODAL VARS
-  const chpwModal = document.querySelector('#my-chpw-modal')
-  const chpwModalBtn = document.querySelector('#chpw-modal-btn')
-  const chpwCloseBtn = document.querySelector('.chpw-close')
+  const chpwModal = $('#my-chpw-modal')
+  const chpwModalBtn = $('#chpw-modal-btn')
+  const chpwCloseBtn = $('.chpw-close')
   // HANDLE MODAL EVENTS
-  chpwModalBtn.addEventListener('click', openChpwModal)
-  chpwCloseBtn.addEventListener('click', closeChpwModal)
-  window.addEventListener('click', outsideChpwClick)
+  chpwModalBtn.on('click', openChpwModal)
+  chpwCloseBtn.on('click', closeChpwModal)
   // OPEN CHPW
   function openChpwModal () {
-    chpwModal.style.display = 'block'
+    $('.modal').hide()
+    chpwModal.show()
   }
   // CLOSE CHPW
   function closeChpwModal () {
-    chpwModal.style.display = 'none'
+    chpwModal.hide()
   }
-  // CLOSE CHPW IF OUTSIDE CLICK
-  function outsideChpwClick (i) {
-    if (i.target === chpwModal) {
-      chpwModal.style.display = 'none'
-    }
-  }
+
   // SET Create Blog MODAL VARS
-  const createBlogModal = document.querySelector('#my-create-blog-modal')
-  const createBlogModalBtn = document.querySelector('#create-blog-modal-btn')
-  const createBlogCloseBtn = document.querySelector('.create-blog-close')
+  const createBlogModal = $('#my-create-blog-modal')
+  const createBlogModalBtn = $('#create-blog-modal-btn')
+  const createBlogCloseBtn = $('.create-blog-close')
   // HANDLE MODAL EVENTS
-  createBlogModalBtn.addEventListener('click', openCreateBlogModal)
-  createBlogCloseBtn.addEventListener('click', closeCreateBlogModal)
-  window.addEventListener('click', outsideCreateBlogClick)
+  createBlogModalBtn.on('click', openCreateBlogModal)
+  createBlogCloseBtn.on('click', closeCreateBlogModal)
   // OPEN CREATE BLOG
   function openCreateBlogModal () {
-    createBlogModal.style.display = 'block'
+    $('.modal').hide()
+    createBlogModal.show()
   }
   // CLOSE CREATE BLOG
   function closeCreateBlogModal () {
-    createBlogModal.style.display = 'none'
+    createBlogModal.hide()
   }
-  // CLOSE CREATE BLOG IF OUTSIDE CLICK
-  function outsideCreateBlogClick (i) {
-    if (i.target === createBlogModal) {
-      createBlogModal.style.display = 'none'
-    }
-  }
-  // SET UPDATE MODAL VARS
-  const updateBlogModal = $('.update-blog-modal')
+
   // HANDLE MODAL EVENTS
   $('body').on('click', '.update-blog-btn', openUpdateBlogModal)
   $('body').on('click', '.update-blog-close', closeUpdateBlogModal)
-  $(window).on('click', outsideUpdateBlogClick)
   // OPEN CREATE BLOG
   function openUpdateBlogModal (event) {
     $(event.target).parents('.blog').find('.update-blog-modal').css('display', 'block')
@@ -131,12 +113,5 @@ $(() => {
   // CLOSE CREATE BLOG
   function closeUpdateBlogModal () {
     $('.update-blog-modal').css('display', 'none')
-  }
-  // CLOSE CREATE BLOG IF OUTSIDE CLICK
-  // TODO: CHANGE OVER TO JQUERY
-  function outsideUpdateBlogClick (i) {
-    if (i.target === updateBlogModal) {
-      $('.update-blog-modal').css('display', 'none')
-    }
   }
 })

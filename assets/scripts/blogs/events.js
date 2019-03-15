@@ -8,8 +8,9 @@ const onCreateBlog = event => {
   const formData = getFormFields(createBlogForm)
 
   api.createBlog(formData)
+    .then(() => api.getBlogs())
+    .then(ui.onGetBlogsSuccess)
     .then(ui.onCreateBlogSuccess)
-    .then(onGetBlogs)
     .catch(ui.onCreateBlogFailure)
 
   $('form').trigger('reset')
@@ -27,7 +28,6 @@ const onGetUserBlogs = event => {
   $('form').trigger('reset')
 }
 const onDeleteBlog = event => {
-  console.log(event)
   event.preventDefault()
   const blogId = $(event.target).data('blog')
   api.deleteBlog(blogId)
@@ -41,9 +41,9 @@ const onUpdateBlog = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
   const blogId = $(event.target).data('blog')
-  console.log('blog id is', blogId)
   api.updateBlog(formData, blogId)
     .then(ui.onUpdateBlogSuccess)
+    .then(onGetUserBlogs)
     .catch(ui.onUpdateBlogFailure)
 
   $('form').trigger('reset')

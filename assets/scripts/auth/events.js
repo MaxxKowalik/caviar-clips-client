@@ -29,8 +29,8 @@ const onSignOut = event => {
   event.preventDefault()
 
   api.signOut()
-    .then(ui.onSignOutSuccess)
     .then(blogEvents.onGetBlogs)
+    .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
 
   $('form').trigger('reset')

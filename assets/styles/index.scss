@@ -6,12 +6,8 @@ body {
   line-height: 1.6;
   background-image: url('https://i.imgur.com/Ik34b4x.jpg');
   background-size:cover;
-  // background-color: red;
-  // display: flex;
-  // height: 50px;
-  // align-items: center;
-  // justify-content: flex-end;
 }
+
 //SIGN UP MODAL STYLING
 .signup-btn {
     background: #428bca;
@@ -214,7 +210,6 @@ body {
 
     //UPDATE BLOG MODAL STYLING
     .update-blog-btn {
-        // display: none;
         background: #428bca;
         padding: 1em 2em;
         color: #fff;
@@ -267,12 +262,27 @@ body {
         color: #fff;
         border: 0;
     }
+    .home-btn:hover {
+      background: #333;
+      cursor: pointer;
+    }
+
+    // DELETE BLOG BTN STYLES
+    .delete-blog {
+        background: #428bca;
+        padding: 1em 2em;
+        color: #fff;
+        border: 0;
+    }
+    .delete-blog:hover {
+      background: #333;
+      cursor: pointer;
+    }
 
     // SCROLLABLE DIV STYLES
     .clsScroll {
       height: 900px;
       width: 700px;
-      // background-color: yellow;
       overflow-x: hidden;
       overflow-y: auto;
     }
@@ -294,6 +304,11 @@ body {
     // STYLES BLOG-OPTIONS DIV
     .blog-options {
       position: fixed;
-      right: 100px;
-      top: 200px;
+      right: 250px;
+      top: 100px;
+    }
+
+    // CHANGES LOGO STYLES
+    .navbar-brand {
+      cursor: default;
     }

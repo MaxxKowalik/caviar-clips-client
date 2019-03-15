@@ -48,16 +48,6 @@ const updateBlog = (formData, blogId) => {
     data: formData
   })
 }
-// const updateBlog = (data) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/blogs/' + store.user.blog.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-// }
 
 module.exports = {
   createBlog,

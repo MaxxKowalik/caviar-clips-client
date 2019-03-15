@@ -53,6 +53,7 @@ const onSignOutFailure = (responseData) => {
 const onChangePasswordSuccess = (responseData) => {
   $('#user-message').addClass('text-success').text('Hoorah! Password Changed!')
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('.chpw-modal').hide()
 }
 const onChangePasswordFailure = (responseData) => {
   $('#user-message').addClass('text-danger').text('Failed to Change Password')
