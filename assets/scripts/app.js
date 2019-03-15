@@ -103,7 +103,7 @@ $(() => {
     createBlogModal.hide()
   }
 
-  // HANDLE MODAL EVENTS
+  // HANDLE UPDATE MODAL EVENTS
   $('body').on('click', '.update-blog-btn', openUpdateBlogModal)
   $('body').on('click', '.update-blog-close', closeUpdateBlogModal)
   // OPEN CREATE BLOG
