@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Caviar Clips</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- NAV BAR CONTAINING AUTH OPTIONS -->
+      <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" id="logo" href="#">Caviar Clips</a>
+        <!-- CONTAINS USER MESSAGES -->
+        <div class="messages">
+          <p id='user-message'></p>
+        </div>
+        <div id="auth-options">
+          <button id="signup-modal-btn" class="signup-btn">Sign Up</button>
+          <button id="signin-modal-btn" class="signin-btn">Sign In</button>
+          <button id="chpw-modal-btn" class="chpw-btn">Change Password</button>
+          <button id="sign-out" class="signout-btn">Sign Out</button>
+        </div>
+      </nav>
+      <!--  SCROLLABLE DIV HOLDING BLOGS-->
+      <div class="clsScroll px-2 pt-3 mt-5">
+          <div id='blog-table'></div>
+      </div>
+
+      <!--  THIS DIV HOLDS BLOG OPTION BUTTONS -->
+      <div class="blog-options">
+        <button id="create-blog-modal-btn" class="create-blog-btn">Create Blog</button>
+        <button id="show-blog-modal-btn" class="show-blog-btn">Show My Blogs</button>
+        <button class="home-btn">Home</button>
+      </div>
+
+        <!--SIGN UP MODAL -->
+        <div id="my-signup-modal" class="signup-modal modal">
+          <div class="signup-modal-content inner-modal">
+            <span class="signup-close">&times;</span>
+            <form id='sign-up'>
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+              <button>Sign Up</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- SIGN IN MODAL -->
+        <div id="my-signin-modal" class="signin-modal modal">
+          <div class="signin-modal-content inner-modal">
+            <span class="signin-close">&times;</span>
+            <form id='sign-in'>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <button>Sign In</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- CHANGE PASSWORD MODAL -->
+        <div id="my-chpw-modal" class="chpw-modal modal">
+          <div class="chpw-modal-content inner-modal">
+            <span class="chpw-close">&times;</span>
+            <form class='chpw-form'>
+              <input type="password" name="passwords[new]" placeholder="new password">
+              <input type="password" name="passwords[old]" placeholder="old password">
+              <button>Change Password</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Create BlOG MODAL -->
+        <div id="my-create-blog-modal" class="create-blog-modal modal">
+          <div class="create-blog-modal-content inner-modal">
+            <span class="create-blog-close">&times;</span>
+            <form id='create-blog'>
+              <input type="text" name="blog[blog_name]" placeholder="Blog Name">
+              <input type="text" name="blog[content]" placeholder="Content">
+              <button>Create</button>
+            </form>
+          </div>
+        </div>
+
+    </body>
+</html>
