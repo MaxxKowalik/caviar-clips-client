@@ -31,8 +31,9 @@ const onDeleteBlog = event => {
   event.preventDefault()
   const blogId = $(event.target).data('blog')
   api.deleteBlog(blogId)
+    .then(() => api.getBlogs())
     .then(ui.onDeleteBlogSuccess)
-    .then(onGetUserBlogs)
+    // .then(onGetBlogs)
     .catch(ui.onDeleteBlogFailure)
 
   $('form').trigger('reset')

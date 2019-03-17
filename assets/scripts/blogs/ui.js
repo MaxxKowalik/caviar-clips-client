@@ -17,6 +17,7 @@ const onCreateBlogFailure = (responseData) => {
 const onDeleteBlogSuccess = (responseData) => {
   $('#user-message').addClass('text-success').text('Blog Deleted')
   $('#user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('.blog').hide()
   // $('#blog-table').hide()
 }
 const onDeleteBlogFailure = (responseData) => {
